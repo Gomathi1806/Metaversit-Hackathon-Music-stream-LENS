@@ -1,0 +1,73 @@
+{
+  "name": "spotify",
+  "version": "1.0.0",
+  "keywords": [
+    "ethereum",
+    "react",
+    "uniswap",
+    "workspaces",
+    "yarn"
+  ],
+  "private": true,
+  "scripts": {
+    "react-app:build": "yarn workspace @spotify/react-app build --max-old-space-size=12288",
+    "react-app:eject": "yarn workspace @spotify/react-app eject",
+    "react-app:start": "yarn workspace @spotify/react-app start",
+    "react-app:test": "yarn workspace @spotify/react-app test",
+    "build": "yarn workspace @spotify/react-app build --max-old-space-size=12288",
+    "prettier": "yarn workspace @spotify/react-app prettier",
+    "chain": "yarn workspace @spotify/hardhat chain",
+    "fork": "yarn workspace @spotify/hardhat fork",
+    "node": "yarn workspace @spotify/hardhat chain",
+    "test": "yarn workspace @spotify/hardhat test",
+    "start": "yarn workspace @spotify/react-app start",
+    "compile": "yarn workspace @spotify/hardhat compile",
+    "deploy": "yarn workspace @spotify/hardhat deploy",
+    "verify": "yarn workspace @spotify/hardhat verify",
+    "watch": "yarn workspace @spotify/hardhat watch",
+    "accounts": "yarn workspace @spotify/hardhat accounts",
+    "balance": "yarn workspace @spotify/hardhat balance",
+    "send": "yarn workspace @spotify/hardhat send",
+    "ipfs": "yarn workspace @spotify/react-app ipfs",
+    "surge": "yarn workspace @spotify/react-app surge",
+    "s3": "yarn workspace @spotify/react-app s3",
+    "ship": "yarn workspace @spotify/react-app ship",
+    "generate": "yarn workspace @spotify/hardhat generate",
+    "account": "yarn workspace @spotify/hardhat account",
+    "mineContractAddress": "cd packages/hardhat && npx hardhat mineContractAddress",
+    "wallet": "cd packages/hardhat && npx hardhat wallet",
+    "fundedwallet": "cd packages/hardhat && npx hardhat fundedwallet",
+    "flatten": "cd packages/hardhat && npx hardhat flatten",
+    "clean": "cd packages/hardhat && npx hardhat clean",
+    "run-graph-node": "yarn workspace @spotify/services run-graph-node",
+    "remove-graph-node": "yarn workspace @spotify/services remove-graph-node",
+    "clean-graph-node": "yarn workspace @spotify/services clean-graph-node",
+    "graph-codegen": "yarn workspace @spotify/subgraph graph codegen",
+    "graph-build": "yarn workspace @spotify/subgraph graph build",
+    "graph-create-local": "yarn workspace @spotify/subgraph graph create --node http://localhost:8020/ spotify/your-contract",
+    "graph-remove-local": "yarn workspace @spotify/subgraph graph remove --node http://localhost:8020/ spotify/your-contract",
+    "graph-deploy-local": "yarn workspace @spotify/subgraph graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 scaffold-eth/your-contract",
+    "graph-ship-local": "yarn graph-codegen && yarn graph-build --network localhost && yarn graph-deploy-local",
+    "deploy-and-graph": "yarn deploy && yarn graph-ship-local",
+    "theme": "yarn workspace @spotify/react-app theme",
+    "watch-theme": "yarn workspace @spotify/react-app watch",
+    "postinstall": "husky install"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/@graphprotocol/graph-ts",
+      "**/@graphprotocol/graph-ts/**",
+      "**/hardhat",
+      "**/hardhat/**",
+      "**/hardhat-ts",
+      "**/hardhat-ts/**"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^7.0.2"
+  }
+}
